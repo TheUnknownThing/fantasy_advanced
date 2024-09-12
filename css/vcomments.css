@@ -673,3 +673,93 @@
   background-color: #f0f0f0;
   text-align: center;
 }
+
+body.dark-theme .m-comments {
+    background-color: #2a2a2a;
+  }
+  
+body.dark-theme .v[data-class="v"] {
+    color: #b2b2b5;
+    background-color: #2a2a2a;
+  }
+  
+  body.dark-theme .v[data-class="v"] .status-bar,
+  body.dark-theme .v[data-class="v"] .veditor,
+  body.dark-theme .v[data-class="v"] .vinput,
+  body.dark-theme .v[data-class="v"] p,
+  body.dark-theme .v[data-class="v"] pre code {
+    color: #b2b2b5;
+  }
+  
+  body.dark-theme .v[data-class="v"] .vsys,
+  body.dark-theme .v[data-class="v"] .vtime {
+    color: #929298;
+  }
+  
+  body.dark-theme .v[data-class="v"] code,
+  body.dark-theme .v[data-class="v"] pre,
+  body.dark-theme .v[data-class="v"] pre code {
+    color: #929298;
+    background-color: #2a2a2a;
+  }
+  
+  body.dark-theme .v[data-class="v"] .vwrap {
+    border-color: #444;
+    background-color: #2a2a2a;
+  }
+  
+  body.dark-theme .v[data-class="v"] .vicon {
+    fill: #b2b2b5;
+  }
+  
+  body.dark-theme .v[data-class="v"] .vicon.actived {
+    fill: #66b1ff;
+  }
+  
+  body.dark-theme .v[data-class="v"] .vbtn {
+    color: #b2b2b5;
+    border-color: #b2b2b5;
+    background-color: #2a2a2a;
+  }
+  
+  body.dark-theme .v[data-class="v"] .vbtn:hover {
+    color: #66b1ff;
+    border-color: #66b1ff;
+  }
+  
+  body.dark-theme .v[data-class="v"] a:hover {
+    color: #d7191a;
+  }
+  
+  body.dark-theme .v[data-class="v"] .vcards .vcard {
+    border-color: #444;
+  }
+  
+  body.dark-theme .v[data-class="v"] .vcards .vcard .vcontent.expand:before {
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.7));
+  }
+  
+  body.dark-theme .v[data-class="v"] .vcards .vcard .vcontent.expand:after {
+    background: rgba(26, 26, 26, 0.7);
+  }
+  
+  body.dark-theme .v[data-class="v"] .vcount {
+    color: #b2b2b5;
+  }
+  
+  body.dark-theme .v[data-class="v"] .vempty {
+    color: #b2b2b5;
+  }
+  
+  body.dark-theme .pagination a {
+    color: #b2b2b5;
+  }
+  
+  body.dark-theme .pagination a:hover:not(.active) {
+    color: #d7191a;
+  }
+  
+  body.dark-theme .comment-waiting {
+    color: #66b1ff;
+    background-color: #2a2a2a;
+  }
