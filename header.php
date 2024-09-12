@@ -38,6 +38,7 @@
 						<li><a  href="<?php $this->options->siteUrl();?>" class="selected active current nav__item">首页</a></li>
 						<?php $this->widget('Widget_Contents_Page_List')->parse('<li><a href="{permalink}" class="nav__item">{title}</a></li>'); ?>
 						<li><a href="<?php $this->options->feedUrl(); ?>" class=" nav__item">订阅</a></li>
+						<li><button id="darkModeToggle" class="dark-mode-toggle nav__item">切换深色模式</button></li>
 					</ul>
 					<div class="clear clear_nav_inline_end">
 					</div>
