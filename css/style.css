@@ -138,6 +138,7 @@ body {
   line-height: 2em;
   text-align: justify;
   word-wrap: break-word;
+  transition: 0.3s;
 }
 .wrapper {
   max-width: 820px;
@@ -395,6 +396,17 @@ nav ul li a:hover {
   font-weight: 700;
   color: #fff;
   background: #555;
+}
+.dark-mode-toggle .icon-system::before {
+  content: '💻';
+}
+
+.dark-mode-toggle .icon-light::before {
+  content: '☀️';
+}
+
+.dark-mode-toggle .icon-dark::before {
+  content: '🌙';
 }
 article,
 main section.content {

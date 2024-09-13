@@ -51,20 +51,19 @@ $(document).ready((function(_this){return function(){var bt;bt=$('#back_to_top')
 <script>
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
-
-// 检查用户的偏好
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-// 检查本地存储
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark-theme");
+  darkModeIcon.textContent = '🌙';
 } else if (localStorage.getItem("theme") === "light") {
   body.classList.remove("dark-theme");
+  darkModeIcon.textContent = '☀️';
 } else if (prefersDarkScheme.matches) {
   body.classList.add("dark-theme");
+  darkModeIcon.textContent = '🌙';
 }
 
-// 监听系统主题变化
 prefersDarkScheme.addListener((e) => {
   if (e.matches) {
     body.classList.add("dark-theme");
@@ -73,14 +72,15 @@ prefersDarkScheme.addListener((e) => {
   }
 });
 
-// 切换按钮事件
 darkModeToggle.addEventListener("click", function() {
   if (body.classList.contains("dark-theme")) {
     body.classList.remove("dark-theme");
     localStorage.setItem("theme", "light");
+    darkModeIcon.textContent = '☀️';
   } else {
     body.classList.add("dark-theme");
     localStorage.setItem("theme", "dark");
+    darkModeIcon.textContent = '🌙';
   }
 });
 </script>

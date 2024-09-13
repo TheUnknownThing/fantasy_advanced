@@ -47,7 +47,7 @@ if($sticky && $this->is('index') || $this->is('front')){
 	<section class="article-list">
 	<?php while($this->next()): ?>
 	<article>
-	<h2><a href="<?php $this->permalink() ?>" class=""><?php $this->title();$this->sticky(38,'...') ?></a><?php if ($this->options->eyeshow == 'able'): ?> <span><?php get_post_view($this) ?>度</span><?php endif; ?></h2>
+	<h2><a href="<?php $this->permalink() ?>" class=""><?php $this->title();$this->sticky(38,'...') ?></a><?php if ($this->options->eyeshow == 'able'): ?> <span><?php get_post_view($this) ?> 阅读</span><?php endif; ?></h2>
 	<div class="excerpt">
 		<p><?php $this->excerpt();?></p>
 	</div>

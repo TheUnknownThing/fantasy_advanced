@@ -1,0 +1,34 @@
+#timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+#timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: #ddd;
+}
+
+#timeline h3 {
+    position: relative;
+    margin-left: 40px;
+}
+
+.timeline-list {
+    padding-left: 40px;
+}
+
+.timeline-list li {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.timeline-list .date {
+    display: inline-block;
+    width: 60px;
+    margin-right: 10px;
+}

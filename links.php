@@ -12,7 +12,7 @@ $this->need('header.php');
                     <h1><?php $this->title() ?></h1>
                     <div class="meta">
                      <span class="item"><i class="iconfont icon-calendar"></i><time datetime="<?php $this->date(); ?>"><?php $this->date('Y.m.d'); ?></time></span>
-					<?php if ($this->options->eyeshow == 'able'): ?><span class="item"><i class="iconfont icon-eye"></i> <?php get_post_view($this) ?> 度</span><?php endif; ?>
+					<?php if ($this->options->eyeshow == 'able'): ?><span class="item"><i class="iconfont icon-eye"></i> <?php get_post_view($this) ?>  阅读</span><?php endif; ?>
 					 <?php if($this->user->hasLogin()):?><span><a href="<?php $this->options->siteUrl(); ?>admin/write-post.php?cid=<?php $this->cid(); ?>">[编辑]</a></span><?php endif;?>
                     </div>
                     <div class="meta">

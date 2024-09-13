@@ -11,7 +11,7 @@ $this->need('header.php');
 					<?php while($this->next()): ?>
                         <li>
                             <time datetime="<?php $this->date('Y.m.j'); ?>"><?php $this->date('Y.m.j'); ?></time>
-                            <a href="<?php $this->permalink() ?>"><?php $this->title() ?></a><?php if ($this->options->eyeshow == 'able'): ?> <span><?php get_post_view($this) ?>度</span><?php endif; ?>
+                            <a href="<?php $this->permalink() ?>"><?php $this->title() ?></a><?php if ($this->options->eyeshow == 'able'): ?> <span><?php get_post_view($this) ?> 阅读</span><?php endif; ?>
                         </li>
 					<?php endwhile; ?>
                     </ul>
