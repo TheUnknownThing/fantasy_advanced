@@ -49,41 +49,28 @@ a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;backgro
 $(document).ready((function(_this){return function(){var bt;bt=$('#back_to_top');if($(document).width()>480){$(window).scroll(function(){var st;st=$(window).scrollTop();if(st>30){return bt.css('display','block')}else{return bt.css('display','none')}});return bt.click(function(){$('body,html').animate({scrollTop:0},800);return false})}}})(this));
 </script>
 <script>
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark-theme");
-  darkModeIcon.textContent = '🌙';
-} else if (localStorage.getItem("theme") === "light") {
-  body.classList.remove("dark-theme");
-  darkModeIcon.textContent = '☀️';
-} else if (prefersDarkScheme.matches) {
-  body.classList.add("dark-theme");
-  darkModeIcon.textContent = '🌙';
-}
-
-prefersDarkScheme.addListener((e) => {
-  if (e.matches) {
-    body.classList.add("dark-theme");
-  } else {
-    body.classList.remove("dark-theme");
-  }
-});
-
-darkModeToggle.addEventListener("click", function() {
-  if (body.classList.contains("dark-theme")) {
-    body.classList.remove("dark-theme");
-    localStorage.setItem("theme", "light");
-    darkModeIcon.textContent = '☀️';
-  } else {
-    body.classList.add("dark-theme");
-    localStorage.setItem("theme", "dark");
-    darkModeIcon.textContent = '🌙';
-  }
-});
-</script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const darkModeIcon = document.getElementById('darkModeIcon');
+            
+            function setTheme(theme) {
+                document.documentElement.setAttribute("data-theme", theme);
+                localStorage.setItem("theme", theme);
+                darkModeIcon.textContent = theme === "dark" ? '🌙' : '☀️';
+            }
+            
+            // Set initial icon state
+            darkModeIcon.textContent = document.documentElement.getAttribute("data-theme") === "dark" ? '🌙' : '☀️';
+            
+            darkModeToggle.addEventListener("click", function() {
+                const currentTheme = document.documentElement.getAttribute("data-theme");
+                setTheme(currentTheme === "dark" ? "light" : "dark");
+            });
+        });
+    </script>
+<?php $this->footer(); ?>
+</body>
+</html>
 <?php $this->footer(); ?>
 </body>
 </html>

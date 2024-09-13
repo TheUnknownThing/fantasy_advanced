@@ -1,7 +1,7 @@
 # Fantasy_Advanced
 一款极简Typecho 博客主题，由项目https://www.krsay.com/typecho/fantasy.html 开发而来
 
-![screenshot](screenshot.png)
+![screenshot](screenshot.jpg)
 
 >1.5.1
 

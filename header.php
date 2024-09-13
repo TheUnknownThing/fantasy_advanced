@@ -23,6 +23,20 @@
 <?php if ($this->options->fontshow == 'able'): ?>
 <style type="text/css">* {text-shadow : 0.01em 0.01em 0.01em #999999}</style>
 <?php endif; ?>
+<script>
+        (function() {
+            function getTheme() {
+                const savedTheme = localStorage.getItem("theme");
+                if (savedTheme) {
+                    return savedTheme;
+                }
+                return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            
+            const theme = getTheme();
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
 </head>
 <body>
 <div class="wrapper">
