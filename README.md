@@ -3,6 +3,12 @@
 
 ![screenshot](screenshot.jpg)
 
+>1.5.2
+
+底部加入“一言”，优化“碎碎念”页面模板。
+
+感谢 https://nwdan.com/tutorials/typecho-latex-support.html ，加入LaTeX支持。
+
 >1.5.1
 
 新增“时光机”和“碎碎念”页面模板

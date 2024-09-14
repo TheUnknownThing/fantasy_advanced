@@ -1,4 +1,9 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<div class="hitokoto" style="text-align: center;">
+    <p id="hitokoto">
+        <a href="#" id="hitokoto_text">:D 获取中...</a>
+    </p>
+</div>
 <aside>
 <div class="aside-left sidebar">
 	<h3>随机文章</h3>
@@ -14,7 +19,9 @@
 		<?php $this->widget('Widget_Metas_Category_List')->parse('<li><a href="{permalink}" class="">{name}<span> {count}篇</span></a></li>'); ?>
 	</ul>
 </div>
-</aside><footer><span>© <?php echo date('Y'); ?> <?php $this->options->title(); ?> - <a href="<?php $this->options->feedUrl();?>"><?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts crafted</a></span><span> ♥  <a href="https://github.com/PCDotFan/Aragaki">Aragaki</a> By <a href="https://www.krsay.com/typecho/fantasy.html">Fantasy</a></span>
+</aside>
+<footer>
+    <span>© <?php echo date('Y'); ?> <?php $this->options->title(); ?> - <a href="<?php $this->options->feedUrl();?>"><?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts crafted</a></span><span> ♥  <a href="https://github.com/PCDotFan/Aragaki">Aragaki</a> By <a href="https://www.krsay.com/typecho/fantasy.html">Fantasy</a></span>
 <div class="powered_by">
 	<span>Proudly published with</span>
 	<a href="http://typecho.org/" target="_blank">Typecho</a>
@@ -39,6 +46,16 @@
 </div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){(function($){$('#search').click(function(){$('.searchbox').toggleClass('show')});$('.searchbox .searchbox-mask').click(function(){$('.searchbox').removeClass('show')});$('.searchbox-close').click(function(){$('.searchbox').removeClass('show')})})(jQuery)});
+</script>
+<script>
+  fetch('https://international.v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.querySelector('#hitokoto_text')
+      hitokoto.href = `https://international.v1.hitokoto.cn/?uuid=${data.uuid}`
+      hitokoto.innerText = data.hitokoto
+    })
+    .catch(console.error)
 </script>
 <style type="text/css">
 a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and (max-width:580px){.back_to_top{display:none!important}}
@@ -68,6 +85,25 @@ $(document).ready((function(_this){return function(){var bt;bt=$('#back_to_top')
             });
         });
     </script>
+<?php if ($this->is('post') && $this->fields->isLatex == 1): ?>
+<script type = "text/javascript" >
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [{
+          left: "$$",
+          right: "$$",
+          display: true
+      }, {
+          left: "$",
+          right: "$",
+          display: false
+      }],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      ignoredClasses: ["nokatex"]
+    });
+  });
+</script>
+<?php endif; ?>
 <?php $this->footer(); ?>
 </body>
 </html>

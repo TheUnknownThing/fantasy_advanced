@@ -12,10 +12,11 @@
   --table-odd-row-background: #f9f9f9;
   --code-background: #f7f7f7;
   --hr-border: #eee;
+  --back-to-top-color: #e0e0e0;
   --box-shadow-color: hsla(0, 0%, 93%, 0.86);
   --span-color: #ccc;
   --scrollbar-thumb-color: #c8c8c8;
-  --searchbox-background: rgba(0, 0, 0, 0.7);
+  --searchbox-background: rgba(110, 110, 110, 0.7);
   --searchbox-input-background: #fff;
   --searchbox-input-border: #e2e2e2;
   --searchbox-close-hover-color: #3273dc;
@@ -40,11 +41,12 @@
   --table-border: #999;
   --table-odd-row-background: #666;
   --code-background: #555;
-  --hr-border: #999;
+  --hr-border: #2b2b2b;
+  --back-to-top-color: #0a0a0a;
   --box-shadow-color: hsla(0, 0%, 5%, 0.86);
-  --span-color: #999;
+  --span-color: #2b2b2b;
   --scrollbar-thumb-color: #555;
-  --searchbox-background: rgba(255, 255, 255, 0.7);
+  --searchbox-background: rgba(0, 0, 0, 0.7);
   --searchbox-input-background: #333;
   --searchbox-input-border: #555;
   --searchbox-close-hover-color: #ffcc00;
@@ -787,7 +789,7 @@ aside span {
 }
 
 .article-list article .meta {
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 1px solid var(--hr-border);
 }
 
 .excerpt p {
@@ -822,7 +824,7 @@ footer .footer_slogan {
 }
 
 #back_to_top {
-  background: var(--background-color);
+  background: var(--back-to-top-color);
   box-shadow: 0 10px 20px 0 var(--box-shadow-color);
 }
 
@@ -1034,7 +1036,7 @@ a.search:hover span {
 }
 
 #search {
-  background: var(--background-color);
+  background: var(--back-to-top-color);
   box-shadow: var(--searchbox-shadow);
 }
 

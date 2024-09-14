@@ -39,6 +39,13 @@ if ($isLoggedIn && $_SERVER['REQUEST_METHOD'] == 'POST') {
         $db->query($delete);
         header("Location: " . $this->permalink);
         exit;
+    } elseif (isset($_POST['edit_entry_id']) && isset($_POST['edit_entry_content'])) {
+        $update = $db->update($memoriesTable)
+                     ->rows(['content' => $_POST['edit_entry_content']])
+                     ->where('id = ?', $_POST['edit_entry_id']);
+        $db->query($update);
+        header("Location: " . $this->permalink);
+        exit;
     }
 }
 
@@ -55,7 +62,7 @@ $entries = $db->fetchAll($select);
             <form method="post" action="<?php echo $this->permalink(); ?>">
             <textarea name="memories_entry" rows="3" cols="50" placeholder="写下你今天的碎碎念..."></textarea>
             <div style="text-align: right;">
-                <button type="submit">提交</button>
+                <button type="submit" class="submit-btn">提交</button>
             </div>
             </form>
         </div>
@@ -71,12 +78,20 @@ $entries = $db->fetchAll($select);
                     <li>
                         <div class="date"><?php echo date('Y-m-d', $entry['created']); ?></div>
                         <div class="content">
-                            <p><?php echo htmlspecialchars($entry['content']); ?></p>
+                            <p id="content-<?php echo $entry['id']; ?>"><?php echo htmlspecialchars($entry['content']); ?></p>
                             <?php if ($isLoggedIn): ?>
-                                <!-- 删除功能 -->
-                                <form method="post" action="<?php echo $this->permalink(); ?>" style="display:inline;">
-                                    <input type="hidden" name="delete_entry_id" value="<?php echo $entry['id']; ?>">
-                                    <button type="submit" onclick="return confirm('确定要删除这条记录吗？');">删除</button>
+                                <div class="action-buttons">
+                                    <button class="edit-btn" onclick="editEntry(<?php echo $entry['id']; ?>)">编辑</button>
+                                    <form method="post" action="<?php echo $this->permalink(); ?>" style="display:inline;">
+                                        <input type="hidden" name="delete_entry_id" value="<?php echo $entry['id']; ?>">
+                                        <button type="submit" class="delete-btn" onclick="return confirm('确定要删除这条记录吗？');">删除</button>
+                                    </form>
+                                </div>
+                                <form id="edit-form-<?php echo $entry['id']; ?>" method="post" action="<?php echo $this->permalink(); ?>" style="display:none;">
+                                    <input type="hidden" name="edit_entry_id" value="<?php echo $entry['id']; ?>">
+                                    <textarea name="edit_entry_content" rows="3"><?php echo htmlspecialchars($entry['content']); ?></textarea>
+                                    <button type="submit" class="save-btn">保存</button>
+                                    <button type="button" class="cancel-btn" onclick="cancelEdit(<?php echo $entry['id']; ?>)">取消</button>
                                 </form>
                             <?php endif; ?>
                         </div>
@@ -88,6 +103,18 @@ $entries = $db->fetchAll($select);
         </ul>
     </div>
 </div>
+
+<script>
+function editEntry(id) {
+    document.getElementById('content-' + id).style.display = 'none';
+    document.getElementById('edit-form-' + id).style.display = 'block';
+}
+
+function cancelEdit(id) {
+    document.getElementById('content-' + id).style.display = 'block';
+    document.getElementById('edit-form-' + id).style.display = 'none';
+}
+</script>
 
 <?php
 $this->need('footer.php'); 

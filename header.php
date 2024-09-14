@@ -20,6 +20,11 @@
 <link data-n-head="true" rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
 <script type="text/javascript" src="<?php $this->options->themeUrl('css/jquery.js'); ?>"></script>
+<?php if ($this->is('post') && $this->fields->isLatex == 1): ?>
+<script defer type="text/javascript" src="https://cdn.staticfile.net/KaTeX/0.16.9/katex.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.staticfile.net/KaTeX/0.16.9/katex.min.css" />
+<script defer type="text/javascript" src="https://cdn.staticfile.net/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<?php endif; ?>
 <?php if ($this->options->fontshow == 'able'): ?>
 <style type="text/css">* {text-shadow : 0.01em 0.01em 0.01em #999999}</style>
 <?php endif; ?>
