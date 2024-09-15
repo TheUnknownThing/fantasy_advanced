@@ -1,5 +1,7 @@
 # Fantasy_Advanced
-一款极简Typecho 博客主题，由项目https://www.krsay.com/typecho/fantasy.html 开发而来
+一款极简Typecho 博客主题，由项目https://www.krsay.com/typecho/fantasy.html 开发而来。
+
+安装时，将Github上的文件打包下载，重命名为"fantasy_advanced"，并放置到Typecho目录的usr/themes子文件夹中。
 
 ![screenshot](screenshot.jpg)
 

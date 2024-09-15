@@ -45,7 +45,14 @@
 </head>
 <body>
 <div class="wrapper">
-	<header><a href="<?php $this->options->siteUrl();?>" class="logo"><?php if($this->options->logoUrl): ?><img src="<?php $this->options->logoUrl();?>" alt="<?php $this->options->title() ?>" /><?php else : ?><img src="<?php $this->options->themeUrl('css/pic.png'); ?>"/><?php endif; ?></a>
+	<header>
+		<?php if ($this->options->displayLogo == 'able'): ?>
+				<a href="<?php $this->options->siteUrl();?>" class="logo">
+					<?php if($this->options->logoUrl): ?><img src="<?php $this->options->logoUrl();?>" alt="<?php $this->options->title() ?>" />
+					<?php else : ?><img src="<?php $this->options->themeUrl('css/pic.png'); ?>"/>
+					<?php endif; ?>
+				</a>
+		<?php endif; ?>
 	<div class="description">
 		<h1><?php $this->options->title(); ?></h1>
 		<h2><?php $this->options->description() ?></h2>

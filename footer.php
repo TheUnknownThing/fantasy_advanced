@@ -1,9 +1,12 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if ($this->options->useHitokoto == 'able'): ?>
 <div class="hitokoto" style="text-align: center;">
     <p id="hitokoto">
         <a href="#" id="hitokoto_text">:D 获取中...</a>
     </p>
 </div>
+<?php endif; ?>
+
 <aside>
 <div class="aside-left sidebar">
 	<h3>随机文章</h3>
@@ -21,7 +24,7 @@
 </div>
 </aside>
 <footer>
-    <span>© <?php echo date('Y'); ?> <?php $this->options->title(); ?> - <a href="<?php $this->options->feedUrl();?>"><?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts crafted</a></span><span> ♥  <a href="https://github.com/PCDotFan/Aragaki">Aragaki</a> By <a href="https://www.krsay.com/typecho/fantasy.html">Fantasy</a></span>
+    <span>© <?php echo date('Y'); ?> <?php $this->options->title(); ?> - <a href="<?php $this->options->feedUrl();?>"><?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts crafted</a></span><span> ♥  <a href="https://github.com/PCDotFan/Aragaki">Aragaki</a> By <a href="https://github.com/TheUnknownThing">Fantasy_Advanced</a></span>
 <div class="powered_by">
 	<span>Proudly published with</span>
 	<a href="http://typecho.org/" target="_blank">Typecho</a>

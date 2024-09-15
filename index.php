@@ -1,12 +1,13 @@
 <?php
 /**
- * Fantasy 是一个极简自适应博客主题
+ * Fantasy 主题是一个极简自适应博客主题
  * 经作者同意由BITCRON博客Aragaki主题移植而来。
  * 又改名为Fantasy取义“清梦”源自“ 醉后不知天在水，满船清梦压星河。” 意图用来描绘现状。
- * @package Fantasy Theme
- * @author Xingr
- * @version 1.4.2
- * @link https://www.krsay.com/
+ * Fantasy_Advanced 在原主题基础上增加了一些功能，如：暗黑模式、时光机、碎碎念等。
+ * @package Fantasy_Advanced Theme
+ * @author TheUnknownThing
+ * @version 1.5.2
+ * @link https://blog.start-co.de/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');

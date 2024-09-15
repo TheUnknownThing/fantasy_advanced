@@ -32,6 +32,18 @@ function themeConfig($form) {
         ),
         'disable', _t('Emoji表情设置'), _t('默认显示Emoji表情，如果你的数据库charset配置不是utf8mb4请禁用'));
     $form->addInput($Emoji);
+    $useHitokoto = new Typecho_Widget_Helper_Form_Element_Radio('useHitokoto',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('一言设置'), _t('默认禁止，启用则会在底部显示一言'));
+    $form->addInput($useHitokoto);
+    $displayLogo = new Typecho_Widget_Helper_Form_Element_Radio('displayLogo',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('是否显示顶部博客图标'), _t('默认禁止，启用则显示顶部博客图标'));
+    $form->addInput($displayLogo);
 
 }
 
