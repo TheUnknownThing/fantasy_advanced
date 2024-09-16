@@ -2,7 +2,8 @@
   --background-color: #f7f7f7;
   --text-color: #2b2b2b;
   --link-color: #999;
-  --link-hover-color: #555;
+  --link-hover-color: #ddd;
+  --link-hover-background: #3b3b3b;
   --header-color: #2b2b2b;
   --header-sub-color: #bbb;
   --blockquote-background: #f7f7f7;
@@ -12,7 +13,7 @@
   --table-odd-row-background: #f9f9f9;
   --code-background: #f7f7f7;
   --hr-border: #eee;
-  --back-to-top-color: #e0e0e0;
+  --back-to-top-color: #fff;
   --box-shadow-color: hsla(0, 0%, 93%, 0.86);
   --span-color: #ccc;
   --scrollbar-thumb-color: #c8c8c8;
@@ -21,7 +22,7 @@
   --searchbox-input-border: #e2e2e2;
   --searchbox-close-hover-color: #3273dc;
   --searchbox-container-background: #0d382959;
-  --search-button-background: #f0f0f0;
+  --search-button-background: #fff;
   --search-button-hover-background: #dfdfdf;
   --search-button-color: #888;
   --search-button-hover-color: #555;
@@ -33,6 +34,7 @@
   --text-color: #f7f7f7;
   --link-color: #bbb;
   --link-hover-color: #fff;
+  --link-hover-background: #555;
   --header-color: #f7f7f7;
   --header-sub-color: #999;
   --blockquote-background: #555;
@@ -42,7 +44,7 @@
   --table-odd-row-background: #666;
   --code-background: #555;
   --hr-border: #2b2b2b;
-  --back-to-top-color: #0a0a0a;
+  --back-to-top-color: #2b2b2b;
   --box-shadow-color: hsla(0, 0%, 5%, 0.86);
   --span-color: #2b2b2b;
   --scrollbar-thumb-color: #555;
@@ -51,7 +53,7 @@
   --searchbox-input-border: #555;
   --searchbox-close-hover-color: #ffcc00;
   --searchbox-container-background: #333;
-  --search-button-background: #333;
+  --search-button-background: #2b2b2b;
   --search-button-hover-background: #555;
   --search-button-color: #ccc;
   --search-button-hover-color: #fff;
@@ -372,13 +374,13 @@ nav ul li a {
   padding: 0.5em 0.8em;
   color: var(--link-color);
   line-height: 2em;
-  border-top: 2px solid var(--link-hover-color);
+  border-top: 2px solid var(--link-hover-background);
 }
 
 nav ul li a:hover {
   font-weight: 700;
   color: var(--link-hover-color);
-  background: var(--link-hover-color);
+  background: var(--link-hover-background);
 }
 
 .dark-mode-toggle .icon-system::before {
@@ -829,7 +831,7 @@ footer .footer_slogan {
 }
 
 #back_to_top span {
-  color: var(--span-color);
+  color: var(--text-color);
 }
 
 @media only screen and (max-width: 600px) {
