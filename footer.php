@@ -26,7 +26,7 @@
 <footer>
 <div class="ICP">
     <?php if ($this->options->displayICP == 'able'): ?>
-    <span><a href="http://www.miitbeian.gov.cn/" target="_blank"><?php $this->options->ICP(); ?></a></span>
+    <span><a href="https://beian.miit.gov.cn/" target="_blank"><?php $this->options->ICP(); ?></a></span>
 <?php endif; ?>
 <?php if ($this->options->displayPolice == 'able'): ?>
     <span> <a href="<?php $this->options->GongAnUrl(); ?>" rel="noreferrer" target="_blank"><?php $this->options->GongAn(); ?></a></span>
