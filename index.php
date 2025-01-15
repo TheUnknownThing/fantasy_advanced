@@ -6,7 +6,7 @@
  * Fantasy_Advanced 在原主题基础上增加了一些功能，如：暗黑模式、时光机、碎碎念等。
  * @package Fantasy_Advanced Theme
  * @author TheUnknownThing
- * @version 1.5.2
+ * @version 1.5.3
  * @link https://blog.start-co.de/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
