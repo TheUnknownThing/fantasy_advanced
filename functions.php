@@ -45,6 +45,28 @@ function themeConfig($form) {
         'disable', _t('是否显示顶部博客图标'), _t('默认禁止，启用则显示顶部博客图标'));
     $form->addInput($displayLogo);
 
+    $displayICP = new Typecho_Widget_Helper_Form_Element_Radio('displayICP',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('是否显示底部备案信息'), _t('默认禁止，启用则显示底部备案信息'));
+    $form->addInput($displayICP);
+
+    $displayPolice = new Typecho_Widget_Helper_Form_Element_Radio('displayPolice',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('是否显示底部公安备案信息'), _t('默认禁止，启用则显示底部公安备案信息'));
+    $form->addInput($displayPolice);
+
+    $ICP = new Typecho_Widget_Helper_Form_Element_Text('ICP', NULL, NULL, _t('ICP备案号'), _t('如：京ICP备2021000000号'));
+    $form->addInput($ICP);
+    $GongAn = new Typecho_Widget_Helper_Form_Element_Text('beian', NULL, NULL, _t('公安备案号'), _t('如：京公网安备11000002000001号'));
+    $form->addInput($GongAn);
+    $GongAnUrl = new Typecho_Widget_Helper_Form_Element_Text('beianCode', NULL, NULL, _t('公安备案号链接'), _t('如：http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001'));
+    $form->addInput($GongAnUrl);
+    
+
 }
 
 function parseContent($obj){

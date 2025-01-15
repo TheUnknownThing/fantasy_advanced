@@ -40,17 +40,17 @@
   --blockquote-background: #555;
   --blockquote-border: #999;
   --table-background: #555;
-  --table-border: #999;
+  --table-border: #555;
   --table-odd-row-background: #666;
   --code-background: #555;
-  --hr-border: #2b2b2b;
+  --hr-border: #555;
   --back-to-top-color: #2b2b2b;
   --box-shadow-color: hsla(0, 0%, 5%, 0.86);
   --span-color: #2b2b2b;
   --scrollbar-thumb-color: #555;
   --searchbox-background: rgba(0, 0, 0, 0.7);
   --searchbox-input-background: #333;
-  --searchbox-input-border: #555;
+  --searchbox-input-border: #999;
   --searchbox-close-hover-color: #ffcc00;
   --searchbox-container-background: #333;
   --search-button-background: #2b2b2b;
@@ -84,6 +84,7 @@ body {
   margin: 0 auto;
   margin-top: 60px;
   box-shadow: 0 10px 20px 0 var(--box-shadow-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1,
@@ -122,8 +123,8 @@ h4 {
 
 a {
   text-decoration: none;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   color: var(--link-color);
 }
 
@@ -299,8 +300,8 @@ section.search input {
   text-align: center;
   padding: 0.8em 0;
   background-color: var(--background-color);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 section.search input:focus,
@@ -1015,7 +1016,7 @@ a.search {
   line-height: 36px;
   font-size: 26px;
   text-align: center;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
 }
 
 a.search span {

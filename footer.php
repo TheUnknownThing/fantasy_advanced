@@ -19,11 +19,19 @@
 <div class="aside-right sidebar">
 	<h3>分门别类</h3>
 	<ul>
-		<?php $this->widget('Widget_Metas_Category_List')->parse('<li><a href="{permalink}" class="">{name}<span> {count}篇</span></a></li>'); ?>
+		<?php $this->widget('Widget_Metas_Category_List')->parse('<li><a href="{permalink}" class="">{name}<span> {count}</span></a></li>'); ?>
 	</ul>
 </div>
 </aside>
 <footer>
+<div class="ICP">
+    <?php if ($this->options->displayICP == 'able'): ?>
+    <span><a href="http://www.miitbeian.gov.cn/" target="_blank"><?php $this->options->ICP(); ?></a></span>
+<?php endif; ?>
+<?php if ($this->options->displayPolice == 'able'): ?>
+    <span> <a href="<?php $this->options->GongAnUrl(); ?>" rel="noreferrer" target="_blank"><?php $this->options->GongAn(); ?></a></span>
+<?php endif; ?>
+</div>
     <span>© <?php echo date('Y'); ?> <?php $this->options->title(); ?> - <a href="<?php $this->options->feedUrl();?>"><?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?><?php $stat->publishedPostsNum() ?> Posts crafted</a></span><span> ♥  <a href="https://github.com/PCDotFan/Aragaki">Aragaki</a> By <a href="https://github.com/TheUnknownThing">Fantasy_Advanced</a></span>
 <div class="powered_by">
 	<span>Proudly published with</span>
